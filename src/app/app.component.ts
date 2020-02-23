@@ -9,6 +9,7 @@ import { User } from './user/user.enum';
 })
 export class AppComponent {
   title = 'LinkedIn';
+  showUserInfo = true;
 
   constructor() {
     console.log( UserType.User);
