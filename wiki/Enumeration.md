@@ -4,7 +4,7 @@
 
 in `user.enum.ts`:
 
-```
+```json
 Admin, // 0
 SuperUser  // 1
 user // 2
@@ -14,7 +14,7 @@ user // 2
 
 Benutzen der Variablen in Componenten:
 
-```
+```typescript
 import { User } from './user/user.enum';
 
 constructor() {
@@ -31,7 +31,7 @@ console.log( User.User);
 
 in `userType.enum.ts`:
 
-```
+```json
   Admin = "Admin",
   SuperUser = "111",
   User = "User"

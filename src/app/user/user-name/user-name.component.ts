@@ -16,5 +16,27 @@ export class UserNameComponent implements OnInit, DoCheck {
   ngDoCheck(){
     console.log(" DoCheck for UserName");
   }
+  /* name = "Sam T." */
+  /* ODER */
+  private _name = "Sam T."
+
+
+get name(): string{
+
+​	/* return "Herr " + this._name; */
+/* ODER */
+  return `Herr ${this._name}`;
+
+}
+
+set name (value: string) {
+
+​	this._name = value;
+
+}
+
+getName(){
+  return this._name;
+}
 
 }

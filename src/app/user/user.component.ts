@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, DoCheck, AfterViewChecked, OnDestroy } from '@angular/core';
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -26,6 +27,12 @@ export class UserComponent implements OnInit,  AfterViewInit, DoCheck, AfterView
   ngOnDestroy(){
     console.log(" OnDestroy for User");
   }
+
+  name = 'Björn A.'
+
+chgName(){
+  this.name = 'Sam T.'
+}
 
 
 }

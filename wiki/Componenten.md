@@ -28,7 +28,7 @@ Augury
 
 `app.component.html`:
 
-```
+```html
 <app-user></app-user>
 ```
 
@@ -38,7 +38,7 @@ Augury
 
 `user.component.ts`
 
-```
+```typescript
 export class UserComponent {
 	name = 'Björn A.'
 	
@@ -53,7 +53,7 @@ export class UserComponent {
 
 `user.component.html`
 
-```
+```html
 <h1>{{name}}</h1> <!-- Björn A.  wird nach dem klicken auf dem Button zum Sam. T--> 
 
 <button (click)="chgName()"> 
@@ -65,7 +65,7 @@ export class UserComponent {
 
 `user.component.scss`
 
-```
+```css
 h1{
 	color: gray;
 }
@@ -81,7 +81,7 @@ button{
 * **selector:** HTML-Knotenname; CSS-Komponente
 * **templateUrl:** separate HTML-Datei
 * **template:** Vorlage der Komponente - Beispielsweise direkter HTML-Code `<h1> Title </h1>` oder mehrzeilig 
-```
+```html
 `
 <h1> Title </h1>
 <ul>
@@ -93,7 +93,7 @@ button{
 ```
 * **styles**: 
 
-  ```
+  ```typescript
 [`
       h1{
   		text-decoration: underline;
@@ -111,7 +111,7 @@ button{
 
 * styleSheet für Host: 
 
-  ```
+  ```css
   app-user-list{ /* also den selector */
     h1{
       text-decoration: underline;
@@ -132,7 +132,7 @@ button{
 ## Encapsulation-Modi
 
 solche Elemente in DOM:
-```
+```html
 <ul  _ngcontent-hob-c18> </ul>
 ```
 
@@ -140,7 +140,7 @@ solche Elemente in DOM:
 
 Änderung wie folgt:
 
-```
+```typescript
 import { ViewEncapsulation } from '@angular/core';
 
 @component ({
@@ -151,7 +151,7 @@ import { ViewEncapsulation } from '@angular/core';
 &rarr; **Wirkung**: allgemeine CSS-Definitionen werden nicht mehr klassifiziert und wirken auf alle Elemente
 
 
-```
+```typescript
 import { ViewEncapsulation } from '@angular/core';
 
 @component ({
@@ -169,7 +169,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 `app.component.html`
 
-```
+```html
 <app-user></app-user>
 ```
 
@@ -177,7 +177,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 `user.component.html`
 
-```
+```html
 <app-user-list></app-user-list>
 ```
 

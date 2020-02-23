@@ -49,7 +49,7 @@ für die Kommunikation zwischen den Modulen bzw. Componenten muss man das eine M
 * unter `app` einen neuen Ordner erzeugen Namens `user`
 * neue .ts-Datei erzeugen: `UserModule.ts`
 * Skript: 
-```
+```typescript
 import { NgModule } from '@angular/core';
 import { CommonModule} from '@angular/common';
 

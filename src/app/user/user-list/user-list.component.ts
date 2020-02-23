@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, DoCheck } from '@angular/core';
+import { User } from '../user.enum';
 
 @Component({
   selector: 'app-user-list',
@@ -24,4 +25,7 @@ export class UserListComponent implements OnInit, DoCheck {
     console.log(" DoCheck for UserList");
   }
 
+  user_1 = User[0];
+  user_2 = User[1];
+  user_3 = User[2];
 }
