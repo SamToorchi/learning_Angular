@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserType } from './user/user-type.enum';
+import { User } from './user/user.enum';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LinkedIn';
+
+  constructor() {
+    console.log( UserType.User);
+    console.log( User.User);
+  }
 }
