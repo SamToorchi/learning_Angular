@@ -18,7 +18,7 @@ Augury
 
 ## Component löschen
 
-* Eintrag in `app.module.ts` löschen
+* Eintrag in `app.module.ts` löschen (`import`)
 * Eintrag in dem Bereich `@NgModule` aus `app.module.ts` löschen
 * der Ordner manuell löschen
 
@@ -151,6 +151,8 @@ import { ViewEncapsulation } from '@angular/core';
 &rarr; **Wirkung**: allgemeine CSS-Definitionen werden nicht mehr klassifiziert und wirken auf alle Elemente
 
 
+
+
 ```typescript
 import { ViewEncapsulation } from '@angular/core';
 
@@ -195,4 +197,4 @@ beachten, dass `user.modul` in `app.modul` importiert wurde
   * **ngAfterContentChecked:** Wenn *DoCheck* abgeschlossen wurde bzw. wenn die Kinder sich aktualisiert haben
   * **ngAfterViewInit:**Mit dem Lifecycle-Hook AfterViewInit lässt sich herausfinden, ob die untergeordneten Komponenten fertig initialisiert sind
   * **ngAfterViewChecked:** wenn die Kinder in der HTML-Seite sich ändern
-* **ngOnDestroy:** falls ein Component von einem anderen Component gelöscht wird. Also wird aufgerufen, wenn Angular eine Komponente zerstört hat
+* **ngOnDestroy:** falls ein Component von einem anderen Component gelöscht wird. Also wird aufgerufen, wenn Angular einen Komponent zerstört hat

@@ -10,3 +10,9 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+/*
+  let div: HTMLDivElement = document.createElement( 'div') as HTMLDivElement;
+  div.innerHTML = '<h1> my div </h1>';
+  document.body.appendChild( div );
+*/

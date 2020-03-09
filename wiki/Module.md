@@ -3,8 +3,6 @@
 * sind Container mit Componenten, Direktiven, Pipes, Services usw.
 * wiederverwendbar mit  Hilfe von Import und Export
 
-
-
 z.B. Modul A hat Component A und Component B; Modul B hat Component C
 
 für die Kommunikation zwischen den Modulen bzw. Componenten muss man das eine Modul in dem anderen importieren. Also Componente müssen zu erst exportiert werden
@@ -36,6 +34,7 @@ für die Kommunikation zwischen den Modulen bzw. Componenten muss man das eine M
     ​        `export class ModuleName`
 
 * `@NgModule`  - Decorator (Metainformationen)
+  
   * imports - Liste der importierten Module
   * declarations: Liste der Komponenten, Directiven und Pipes innerhalb des Modules
   * providers: Liste der Services
@@ -63,13 +62,18 @@ export class UserModule(){
 }
 ```
 
+
+
 ## eigenes Modul über Console erzeugen
+
 `ng g module products`
+
+
 
 ## Modul mit Komponenten importieren
 `ng g c user/user`
 
-die Components werden in der `declarations` des Moduls eingefügt/importiert
+die Components werden in der `declarations` des Moduls eingefügt/importiert.
 
 wenn man jetzt den Komponent in der `app.component` einfügen möchte, kann man das in der HTML-Seite wie folgt einfügen: `<app-user></app-user>`
 Vorher muss man `UserComponent` in `user.module.ts` exportieren lassen, also folgendes unter dem `declarations` einfügen: `exports: [UserComponent]`. 

@@ -7,7 +7,7 @@ in `user.enum.ts`:
 ```json
 Admin, // 0
 SuperUser  // 1
-user // 2
+User // 2
 ```
 
 

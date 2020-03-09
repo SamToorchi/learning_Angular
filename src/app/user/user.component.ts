@@ -31,7 +31,12 @@ export class UserComponent implements OnInit,  AfterViewInit, DoCheck, AfterView
   name = 'Björn A.'
 
 chgName(){
-  this.name = 'Sam T.'
+      if (this.name != "Björn A.") {
+      this.name = "Björn A."
+    }
+    else{
+      this.name = "Sam T."
+    }
 }
 
 
