@@ -190,7 +190,21 @@ beachten, dass `user.modul` in `app.modul` importiert wurde
 ## Lebenszyklen der Komponente in der Reihenfolge
 
 * **constructor**: das erste Element was erzeugt wird - Aufbau des Komponents
-* **ngOnChanges:** falls Wert Änderungen vorliegen
+* **ngOnChanges:** wenn über ein @Input-Eigenschaft sich ändert
+
+```typescript
+import {OnChanges, SimpleChanges} from '@angular/core';
+
+export class UserNameComponent implements OnChanges {
+	  ngOnChanges(changes: SimpleChanges): void{
+		console.log( changes );
+  }
+}
+
+```
+
+
+
 * **ngOnInit:** Inizialiserung
 * **ngDoCheck:** wird ausgeführt, wenn die Komponente prüfen soll, ob sich bestimmte Werte abhängig von Eigenschaften geändert haben
 * **anAfterContentInit:** wenn Kinder-Elemente vollständig aufgebaut sind, wird diese Methode aufgerufen

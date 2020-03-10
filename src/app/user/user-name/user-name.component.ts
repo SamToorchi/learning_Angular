@@ -1,11 +1,11 @@
-import {Component, OnInit, DoCheck} from '@angular/core';
+import {Component, OnInit, DoCheck, HostListener, HostBinding, Input, OnChanges, SimpleChanges, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-user-name',
   templateUrl: './user-name.component.html',
   styleUrls: ['./user-name.component.scss']
 })
-export class UserNameComponent implements OnInit, DoCheck {
+export class UserNameComponent implements OnInit, DoCheck, OnChanges {
 
   constructor() {
     let div: HTMLDivElement = document.createElement('div') as HTMLDivElement;
@@ -21,8 +21,34 @@ export class UserNameComponent implements OnInit, DoCheck {
     console.log(' DoCheck for UserName');
   }
 
-  /* name = "Sam T." */
+  ngOnChanges(changes: SimpleChanges): void{
+    console.log( changes );
+  }
+
+  @HostListener('click')
+  chgName() {
+    if (this.name != 'Peter Müller') {
+      this.name = 'Peter Müller';
+      this.isAdminUser = false;
+      this.nameChanged.emit("Peter Müller");
+    } else {
+      this.name = 'Sam T.';
+      this.isAdminUser = true;
+      this.nameChanged.emit("Sam T.");
+    }
+
+  }
+
+  @Input('name')
+  name = 'Sam T.';
+
+  @Output()
+  nameChanged: EventEmitter<string> = new EventEmitter();
+
+
   /* ODER */
+  /* ersetzt durch @Input */
+  /*
   private _name = 'Sam T.';
 
 
@@ -30,20 +56,19 @@ export class UserNameComponent implements OnInit, DoCheck {
 
   ​	/* return "Herr " + this._name; */
     /* ODER */
+  /*
     return `Herr ${this._name}`;
 
   }
 
   set name(value: string) {
-
   ​	this._name = value;
-
   }
 
   getName() {
     return this._name;
   }
-
+*/
   htmlContent = `<p>lorem ipsum dolor sit</p>`;
   imgPath = '/assets/img/logo.png';
   private _altLabel = 'logo';
@@ -57,18 +82,13 @@ export class UserNameComponent implements OnInit, DoCheck {
   fontSize = 1.2;
   userNameStyleClass = 'user-name';
 
+
+  /*ersetzt durch HostBinder */
+  /*
   get isAdminUser(): boolean {
     return this._name === 'Sam T.';
   }
-
-  chgName(event: MouseEvent) {
-    debugger;
-    if (this._name != 'Peter Müller') {
-      this._name = 'Peter Müller';
-    } else {
-      this._name = 'Sam T.';
-    }
-
-  }
-
+ */
+  @HostBinding('class.user-name')
+  isAdminUser = false;
 }

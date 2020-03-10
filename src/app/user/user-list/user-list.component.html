@@ -1,6 +1,10 @@
-<h1>User List</h1>
+<h1>User List - {{currentUser3}}</h1>
 <ul>
     <li>{{user_1}}</li>
     <li>{{user_2}}</li>
     <li>{{user_3}}</li>
 </ul>
+
+<app-user-name [name]="user1"></app-user-name>
+<app-user-name [name]="user2"></app-user-name>
+<app-user-name [name]="user3" (nameChanged)="onNameChanged ($event)"></app-user-name>

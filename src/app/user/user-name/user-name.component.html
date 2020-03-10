@@ -1,4 +1,7 @@
-<h3  [style.fontSize.em]="fontSize" [class.user-name]="isAdminUser">{{name}}</h3>
+<h3  [style.fontSize.em]="fontSize">{{name}}</h3>
 <div [innerHTML]="htmlContent" [attr.aria-label]="desc"></div>
 <img [src]="imgPath" [attr.alt]="getAltLabel()" />
+
+<!--
 <button (click)="chgName($event)" >Ändere Benutzername </button>
+-->
